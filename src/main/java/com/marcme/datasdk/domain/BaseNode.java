@@ -2,11 +2,10 @@ package com.marcme.datasdk.domain;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.neo4j.core.schema.*;
+import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.neo4j.core.schema.Node;
 
 import java.time.LocalDateTime;
 
@@ -19,7 +18,6 @@ import java.time.LocalDateTime;
 public class BaseNode<Identifier>
 {
   @Id
-  @GeneratedValue
   @EqualsAndHashCode.Include
   protected Identifier id;
 
@@ -29,11 +27,4 @@ public class BaseNode<Identifier>
   @LastModifiedDate
   protected LocalDateTime modified;
 
-  @CreatedBy
-  @Relationship
-  @RelationshipId
-  protected UserNode cretor;
-
-  @LastModifiedBy
-  protected UserNode autor;
 }

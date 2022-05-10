@@ -1,0 +1,1 @@
+helm install postgresql-dev bitnami/postgresql

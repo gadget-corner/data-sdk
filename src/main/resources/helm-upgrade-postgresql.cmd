@@ -1,0 +1,1 @@
+helm upgrade postgresql-dev -n devops bitnami/postgresql --set postgresqlPassword=changeit --set replication.password=changeit
